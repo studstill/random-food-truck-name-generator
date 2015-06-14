@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Word Generator</title>
+  <link href='http://fonts.googleapis.com/css?family=Coustard|Cherry+Cream+Soda|Vast+Shadow' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Cantarell:400,700,700italic,400italic|Special+Elite' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+<body>
+  <div class="foodTruck">
+    <p>
+      <h1>
+        Random Food Truck<br>Name Generator
+      </h1>
+      <h3>
+        Click the food truck to generate a new name.
+      </h3>
+    </p>
+    <img src="img/food_truck.png" id="foodTruckImage" />
+    <p id="foodTruckName">
+      Food Truck Name
+    </p>
+    <div id="formArea">
+      <h3>
+        Help us improve the app!  Submit your own words to our database to make
+        our Food Truck Name Generator more exciting!
+      </h3>
+      <form action="/submitNewAdjective" method="post" id="submitAdjective">
+      <div>
+        <label for="userAdjective"></label>
+        <input type="text" id="userAdjective" />
+        <button type="submit">Submit Your New Adjective</button>
+      </div>
+    </form>
+    <p id="userAdjSubmitRespose">
+    </p>
+    <form action="/submitNewVerb" method="post" id="submitVerb">
+      <div>
+        <label for="userVerb"></label>
+        <input type="text" id="userVerb" />
+        <button type="submit">Submit Your New Verb</button>
+      </div>
+    </form>
+    <p id="userVerbSubmitRespose">
+    </p>
+    <form action="/submitNewNoun" method="post" id="submitNoun">
+      <div>
+        <label for="userNoun"></label>
+        <input type="text" id="userNoun" />
+        <button type="submit">Submit Your New Food</button>
+      </div>
+    </form>
+    <p id="userNounSubmitRespose">
+    </p>
+    </div>
+    <p id="emptyP">
+    </p>
+  </div>
+  <div id='resetUserDatabase'>
+    Reset User Submissions
+  </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="js/client.js"></script>
+</body>
+</html>

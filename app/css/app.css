@@ -1,0 +1,102 @@
+body {
+  background-image: url("../img/sun_rays.jpg");
+  background-position: center;
+}
+
+.foodTruck {
+  display: block;
+  text-align: center;
+  font-family: sans-serif;
+  /*font-family: 'Cherry Cream Soda', cursive;*/
+  text-shadow: 4px 4px 7px rgba(150, 150, 150, 1);
+}
+
+.foodTruck h1 {
+  margin-bottom: 0;
+  font-size: 3em;
+  text-decoration: none;
+  letter-spacing: 6px;
+  line-height: 95%;
+  font-family: 'Special Elite', cursive;
+}
+
+.foodTruck>h3 {
+  margin-top: 0;
+  letter-spacing: 1px;
+}
+#foodTruckImage {
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  max-height: 400px;
+  max-width: 650px;
+}
+
+#foodTruckName {
+  display: none;
+  margin: 0;
+  font-family: 'Vast Shadow', cursive;
+  font-size: 3em;
+  text-shadow: 4px 4px 7px rgba(150, 150, 150, 1);
+}
+
+#formArea {
+  display: inline;
+  font-family: 'Special Elite', cursive;
+}
+
+#formArea p {
+  margin: 5px;
+}
+
+#formArea button {
+  height: 2em;
+  width: 300px;
+  font-size: 1.25em;
+  text-align: center;
+  background-color: #749E32;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid rgba(0,0,0,.9);
+  box-shadow: 8px 8px 43px -8px rgba(255,255,255,0.75);
+  font-family: 'Special Elite', cursive;
+}
+
+form input {
+  height: 2.5em;
+  width: 200px;
+  text-align: center;
+}
+
+#emptyP {
+  height: 1px;
+}
+
+#resetUserDatabase {
+  position: relative;
+  display: inline-block;
+  float: right;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 7.5px 10px;
+  font-family: 'Special Elite', cursive;
+}
+
+/****************************************
+  PSUEDO Selectors
+****************************************/
+
+#foodTruckImage:hover {
+  cursor: pointer;
+}
+
+#formArea button:hover {
+  cursor: pointer;
+}
+
+#resetUserDatabase:hover {
+  box-shadow: 0px 0px 7px rgba(255, 255, 255, 1);
+  cursor: pointer;
+}
