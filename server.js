@@ -8,6 +8,7 @@ var port = process.env.PORT || 3000;
 
 // Refer server to app/ directory
 app.use(express.static(__dirname + '/app'));
+
 // Implement bodyParser package
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -61,6 +62,6 @@ app.get('/resetUserDatabase', function(request, response) {
   adjectives = new Adjectives();
   nouns = new Nouns();
   verbs = new Verbs();
-  response.json({message: "User submissions successfully reset"});
-})
+  response.json({message: 'User submissions successfully removed from database'});
+});
 

@@ -11,6 +11,7 @@ var Nouns = function() {
   this.soup = true;
   this.crepes = true;
   this.pizza = true;
+  this['ice-cream'] = true;
 };
 
 module.exports = Nouns;
