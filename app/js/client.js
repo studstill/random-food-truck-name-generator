@@ -1,27 +1,22 @@
 'use strict';
 /*global $:false */
 
-$("#foodTruckImage").on("click", function() {
-  $('#foodTruckName').empty().show();
-  var adjective = '';
-  var verb = '';
-  var noun = '';
+function getWord(path, index) {
+  $.get(path, function(response) {
+    $('#foodTruckName span:eq(' + index + ')').text(response.word);
+  });
+}
 
-  $.get("/adjective", function(response) {
-  adjective = response.word;
-    $('#foodTruckName').append(adjective.toUpperCase() + ' ');
-  });
-  $.get("/verb", function(response) {
-    verb = response.word;
-    $('#foodTruckName').append(verb.toUpperCase() + ' ');
-  });
-  $.get("/noun", function(response) {
-    noun = response.word;
-    $('#foodTruckName').append(noun.toUpperCase());
-  });
-  console.log(adjective);
-  //$('foodTruckName').html(verb + ' ' + adjective + ' ' + noun);
+$("#foodTruckImage").on("click", function() {
+  $('#foodTruckName').show().find('span').empty();
+
+  var path = ['/adjective', '/verb', '/noun'];
+  for (var i = 0; i < path.length; i++) {
+    getWord(path[i], i);
+  }
 });
+
+
 
 $('#submitAdjective').on('submit', function(event) {
   event.preventDefault();
