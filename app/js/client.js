@@ -11,17 +11,17 @@ $('#foodTruckImage').on('click', function() {
     adjective = response.word;
 
     $('#foodTruckName').append(adjective.toUpperCase() + ' ');
-  });
+  }, false);
 
   $.get('/verb', function(response) {
     verb = response.word;
     $('#foodTruckName').append(verb.toUpperCase() + ' ');
-  });
+  }, false);
 
   $.get('/noun', function(response) {
     noun = response.word;
     $('#foodTruckName').append(noun.toUpperCase() + ' ');
-  });
+  }, false);
 });
 
 $('#submitAdjective').on('submit', function(event) {
