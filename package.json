@@ -1,9 +1,9 @@
 {
-  "name": "random-word-generator",
+  "name": "random-food-truck-name-generator",
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stephanielingwood/random-word-generator"
+    "url": "https://github.com/studstill/random-food-truck-name-generator"
   },
   "description": "Random Word Generator for JavaScript F2 at Code Fellows",
   "dependencies": {
