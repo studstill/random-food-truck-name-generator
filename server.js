@@ -62,6 +62,6 @@ app.get('/resetUserDatabase', function(request, response) {
   adjectives = new Adjectives();
   nouns = new Nouns();
   verbs = new Verbs();
-  response.json({message: 'User submissions successfully removed from database'});
+  response.json({message: 'User submissions successfully deleted'});
 });
 

@@ -1,29 +1,23 @@
 'use strict';
 /*global $:false */
 
+// Declare function to hand get requests
+function getWord(path, index) {
+  $.get(path, function(response) {
+    $('#foodTruckName span:eq(' + index + ')').text(response.word);
+  });
+}
+
+// Get words and populate spans
 $('#foodTruckImage').on('click', function() {
-  $('#foodTruckName').empty().show();
-  var adjective = '';
-  var verb = '';
-  var noun = '';
-
-  $.get('/adjective', function(response) {
-    adjective = response.word;
-
-    $('#foodTruckName').append(adjective.toUpperCase() + ' ');
-  }, false);
-
-  $.get('/verb', function(response) {
-    verb = response.word;
-    $('#foodTruckName').append(verb.toUpperCase() + ' ');
-  }, false);
-
-  $.get('/noun', function(response) {
-    noun = response.word;
-    $('#foodTruckName').append(noun.toUpperCase() + ' ');
-  }, false);
+  $('#foodTruckName').show().find('span').empty();
+  var wordPaths = ['/adjective', '/verb', '/noun'];
+  for (var i = 0; i < wordPaths.length; i++) {
+    getWord(wordPaths[i], i);
+  }
 });
 
+// Handle post request for user adjective submission
 $('#submitAdjective').on('submit', function(event) {
   event.preventDefault();
   var userAdjective = $('#userAdjective').val();
@@ -35,6 +29,7 @@ $('#submitAdjective').on('submit', function(event) {
   });
 });
 
+// Handle post request for user verb submission
 $('#submitVerb').on('submit', function(event) {
   event.preventDefault();
   var userVerb = $('#userVerb').val();
@@ -48,6 +43,7 @@ $('#submitVerb').on('submit', function(event) {
   });
 });
 
+// Handle post request for user nour submission
 $('#submitNoun').on('submit', function(event) {
   event.preventDefault();
   var userNoun = $('#userNoun').val();
@@ -59,16 +55,18 @@ $('#submitNoun').on('submit', function(event) {
   });
 });
 
+// Handle get request to "reset database"
 $('#resetUserDatabase').on('click', function() {
   $.get('/resetUserDatabase', function(response) {
     $('#resetUserDatabase').text(response.message);
   });
-
+  // Show success message
   setTimeout(function() {
     $('#resetUserDatabase').text('Delete all user submissions');
   }, 3000);
 });
 
+// Make instructions flash to draw attention to them
 $(function blinker() {
   $('.foodTruck>h3').fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
 });
