@@ -25,7 +25,7 @@ $('#submitAdjective').on('submit', function(event) {
   $.post('/submitNewAdjective', {adjective: userAdjective}, function(response) {
     var confirm = response.message;
     console.log(confirm);
-    $('#userAdjSubmitRespose').html(confirm);
+    $('#userAdjectiveSubmitRespose').html(confirm);
   });
 });
 
