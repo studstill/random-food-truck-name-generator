@@ -1,6 +1,8 @@
 body {
   background-image: url("../img/sun_rays.jpg");
-  background-position: center;
+  background-position: bottom;
+  background-repeat: repeat;
+  position: absolute;
     /* Set up proportionate scaling */
   width: 100%;
   height: auto;
