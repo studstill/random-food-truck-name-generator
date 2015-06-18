@@ -55,18 +55,42 @@ $('#submitNoun').on('submit', function(event) {
   });
 });
 
+
+var warningBoxHTML = '<h1>WARNING!</h1>' +
+  'Are you sure you want to do this?<br>' +
+  'Only click the button if words have become obscene.<br><br>' +
+  'All previous submissions by all other users will be lost!<br>' +
+  '<button id="resetResponses">RESET WORD DATABASE</button><sp>' +
+  '<button id="cancel">Cancel</button>';
+
+
+var $overlay = $('<div class="overlay"></div>');
+var $warningBox = $('<p id="warningBox"></p>');
+
+$overlay.append($warningBox);
+$('body').append($overlay);
+
 // Handle get request to "reset database"
 $('#resetUserDatabase').on('click', function() {
-  $.get('/resetUserDatabase', function(response) {
-    $('#resetUserDatabase').text(response.message);
+  $overlay.show();
+  $warningBox.html(warningBoxHTML);
+  $('#resetResponses').on('click', function() {
+    $.get('/resetUserDatabase', function(response) {
+      $('#resetResponses').text(response.message);
+    });
+    setTimeout(function() {
+       $overlay.hide();
+    }, 2000);
   });
+  $('#cancel').on('click', function() {
+    $overlay.hide();
+  });
+
   // Show success message
-  setTimeout(function() {
-    $('#resetUserDatabase').text('Delete all user submissions');
-  }, 3000);
+
 });
 
 // Make instructions flash to draw attention to them
 $(function blinker() {
-  $('.foodTruck>h3').fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
+  $('.foodTruck>h3').fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
 });
