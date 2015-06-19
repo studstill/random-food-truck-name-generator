@@ -84,6 +84,7 @@ body {
 button {
   /*Implement grow effect from hover.css*/
   font-family: "Oswald" sans-serif;
+  letter-spacing: 1px;
   display: inline-block;
   vertical-align: middle;
   -webkit-transform: translateZ(0);
@@ -101,7 +102,7 @@ button {
 
 #formArea button {
   height: 2em;
-  width: 250px;
+  width: 325px;
   margin: 3px 5px;
   font-size: 1.25em;
   text-align: center;
