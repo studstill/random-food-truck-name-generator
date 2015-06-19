@@ -1,12 +1,17 @@
-body {
+html {
   background-image: url("../img/sun_rays.jpg");
-  background-position: bottom;
-  background-repeat: repeat;
-  position: absolute;
+  background-size: cover;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+body {
     /* Set up proportionate scaling */
   width: 100%;
   height: auto;
-  font-family: 'Special Elite', cursive;
+  font-family: 'Roboto', cursive;
   font-size: 20px
 
 }
@@ -21,7 +26,7 @@ body {
   margin-bottom: 0;
   font-size: 3em;
   text-decoration: none;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   line-height: 95%;
 }
 
@@ -41,6 +46,20 @@ body {
   max-height: 400px;
   max-width: 650px;
   filter: drop-shadow(5px 5px 5px #222);
+  /*Implement grow effect from hover.css*/
+  font-family: "Oswald" sans-serif;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
 }
 
 #foodTruckName {
@@ -52,7 +71,8 @@ body {
 }
 
 #formArea {
-  display: inline;
+  margin: auto 15%;
+  display: block;
   font-size: .85em;
   /*font-family: 'Special Elite', cursive;*/
 }
@@ -61,24 +81,38 @@ body {
   margin: 5px;
 }
 
+button {
+  /*Implement grow effect from hover.css*/
+  font-family: "Oswald" sans-serif;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+
+}
+
 #formArea button {
   height: 2em;
-  width: 350px;
+  width: 250px;
+  margin: 3px 5px;
   font-size: 1.25em;
   text-align: center;
   background-color: #749E32;
   color: white;
-  border-radius: 5px;
-  border: 1px solid rgba(0,0,0,.9);
-  box-shadow: 8px 8px 43px -8px rgba(255,255,255,0.75);
-  font-family: 'Special Elite', cursive;
 }
 
 form input {
   height: 1.25em;
-  width: 350px;
+  width: 250px;
   text-align: center;
-  font-family: 'Special Elite', cursive;
   font-size: 1.4em;
 }
 
@@ -96,7 +130,7 @@ form input {
   border-radius: 5px;
   margin: 5px;
   padding: 7.5px 10px;
-  /*font-family: 'Special Elite', cursive;*/
+  font-family: 'Oswald', futura;
 }
 
 .overlay {
@@ -134,9 +168,7 @@ form input {
   vertical-align: text-bottom;
   color: white;
   border-radius: 5px;
-  border: 1px solid rgba(0,0,0,1);
   box-shadow: 8px 8px 43px -8px rgba(255,255,255,0.75);
-  font-family: 'Special Elite', cursive;
   display: inline-block;
 }
 
@@ -148,9 +180,7 @@ form input {
   vertical-align: text-bottom;
   color: black;
   border-radius: 5px;
-  border: 1px solid rgba(0,0,0,1);
   box-shadow: 8px 8px 43px -8px rgba(255,255,255,0.75);
-  font-family: 'Special Elite', cursive;
   display: inline-block;
 }
 
@@ -160,28 +190,15 @@ form input {
   PSUEDO Selectors
 ****************************************/
 
+
 #foodTruckImage:hover {
-  cursor: pointer;
-  -webkit-filter: drop-shadow(0px 0px 25px rgba(255, 255, 255, 1));
+    cursor: pointer;
+  -webkit-transform: scale(1.025);
+  transform: scale(1.025);
 }
 
-#formArea button:hover {
+button:hover {
   cursor: pointer;
-  box-shadow: 0px 0px 7px rgba(255, 255, 255, 1);
-}
-
-#resetUserDatabase:hover {
-  box-shadow: 0px 0px 7px rgba(255, 255, 255, 1);
-  cursor: pointer;
-}
-
-#resetResponses:hover {
-  box-shadow: 0px 0px 20px rgb(255, 255, 255);
-  cursor: pointer;
-}
-
-#cancel:hover {
-  box-shadow: 0px 0px 20px rgb(255, 255, 255);
-  cursor: pointer;
-}
+  -webkit-transform: scale(1.025);
+  transform: scale(1.025);
 }

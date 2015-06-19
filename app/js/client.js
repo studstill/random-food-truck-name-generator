@@ -94,3 +94,8 @@ $('#resetUserDatabase').on('click', function() {
 $(function blinker() {
   $('.foodTruck>h3').fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
 });
+
+
+
+
+
