@@ -8,15 +8,16 @@ var port = process.env.PORT || 3000;
 
 // Refer server to app/ directory
 app.use(express.static(__dirname + '/app'));
+
 // Implement bodyParser package
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-var getRandomWord = require('./app/lib/getRandomWord');
-var postWord = require('./app/lib/postWord');
-var Adjectives = require('./app/lib/Adjectives');
-var Nouns = require('./app/lib/Nouns');
-var Verbs = require('./app/lib/Verbs');
+var getRandomWord = require('./lib/getRandomWord');
+var postWord = require('./lib/postWord');
+var Adjectives = require('./lib/Adjectives');
+var Nouns = require('./lib/Nouns');
+var Verbs = require('./lib/Verbs');
 
 // Respond to root url request with index.html
 app.get('/', function(request, response) {
@@ -61,6 +62,6 @@ app.get('/resetUserDatabase', function(request, response) {
   adjectives = new Adjectives();
   nouns = new Nouns();
   verbs = new Verbs();
-  response.json({message: "User submissions successfully reset"});
-})
+  response.json({message: 'User submissions successfully deleted'});
+});
 
